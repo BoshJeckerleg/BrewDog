@@ -1,0 +1,57 @@
+@import 'utils/functions';
+@import 'utils/variables';
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(45px);
+  margin: 0;
+  padding: rem(18px) rem(40px);
+  text-decoration: none;
+  transition: background-color 200ms, color 200ms;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &.button-link--disabled {
+    text-decoration: none;
+    cursor: default;
+    opacity: 0.75;
+  }
+}
+
+.button-link--primary {
+  background-color: $color-primary;
+  color: $color-on-primary;
+
+  &:hover,
+  &:focus {
+    background-color: $color-secondary;
+    color: $color-on-secondary;
+  }
+
+  &.button-link--disabled {
+    background-color: $color-primary;
+    color: $color-on-primary;
+  }
+}
+
+.button-link--secondary {
+  background-color: $color-secondary;
+  color: $color-on-secondary;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+    color: $color-on-primary;
+  }
+
+  &.button-link--disabled {
+    background-color: $color-secondary;
+    color: $color-on-secondary;
+  }
+}

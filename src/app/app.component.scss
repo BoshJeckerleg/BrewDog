@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+  display: block;
+  width: 100%;
+  outline: none;
+  overflow: hidden;
+}

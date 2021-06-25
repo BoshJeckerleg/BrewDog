@@ -1,0 +1,13 @@
+<button
+  (click)="onClick()"
+  [disabled]="disabled"
+  [ngClass]="{
+    'button--disabled': disabled,
+    'button--primary': theme === 'primary',
+    'button--secondary': theme === 'secondary'
+  }"
+  class="button type-small"
+  type="button"
+>
+  <ng-content></ng-content>
+</button>

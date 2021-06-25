@@ -1,0 +1,18 @@
+@use 'sass:math';
+
+@function rem($size) {
+  $remSize: math.div($size, 16px);
+  @return #{$remSize}rem;
+}
+
+@function em($size) {
+  $emSize: math.div($size, 16px);
+  @return #{$emSize}em;
+}
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}

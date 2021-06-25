@@ -1,0 +1,39 @@
+@import 'utils/functions';
+@import 'utils/variables';
+
+.subheader {
+  padding: rem(10px) 0;
+  background: $color-surface;
+  color: $color-on-surface;
+}
+
+.subheader__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subheader__link {
+  display: none;
+  color: inherit;
+
+  &:first-of-type {
+    display: block;
+  }
+}
+
+@media (min-width: $breakpoint-main) {
+  .subheader__link {
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: '|';
+      padding: 0 rem(20px);
+    }
+
+    &:last-of-type:after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<a
+  [ngClass]="{
+    'button-link--disabled': disabled,
+    'button-link--primary': theme === 'primary',
+    'button-link--secondary': theme === 'secondary'
+  }"
+  [routerLink]="disabled ? null : routerPath"
+  class="button-link type-small"
+>
+  <ng-content></ng-content>
+</a>

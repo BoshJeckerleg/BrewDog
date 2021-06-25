@@ -1,0 +1,57 @@
+@import 'utils/variables';
+@import 'utils/functions';
+
+.page-not-found__banner {
+  width: 100vw;
+  height: rem(300px);
+  margin: 0 0 0 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+}
+
+.page-not-found__heading {
+  font-size: rem(200px);
+  letter-spacing: 1.7px;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 0.05;
+  margin-top: rem(-60px);
+}
+
+.page-not-found__subheading {
+  margin: 0 0 rem(20px) 0;
+}
+
+.page-not-found__body {
+  margin: 0 0 rem(20px) 0;
+
+  &:last-of-type {
+    margin-bottom: rem(60px);
+  }
+}
+
+@media (min-width: $breakpoint-main) {
+  .page-not-found {
+    padding: rem(160px) 0 rem(80px) 0;
+  }
+
+  .page-not-found__banner-container {
+    display: flex;
+  }
+
+  .page-not-found__banner {
+    width: 100%;
+    height: rem(500px);
+    object-fit: cover;
+  }
+
+  .page-not-found__heading {
+    margin: 0;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .page-not-found__content {
+    padding: rem(40px) 0 0 rem(40px);
+  }
+}

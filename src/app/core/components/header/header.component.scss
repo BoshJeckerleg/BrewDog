@@ -1,0 +1,18 @@
+@import 'utils/functions';
+@import 'utils/variables';
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: rem(15px) 0 rem(10px) 0;
+  background: $color-background;
+  color: $color-on-background;
+  z-index: 10;
+}
+
+.header__logo {
+  height: rem(40px);
+  width: auto;
+}

@@ -1,0 +1,25 @@
+@import 'utils/variables';
+
+.grid-section {
+  display: block;
+}
+
+.grid-section--fill {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - #{rem(74px)});
+}
+
+@each $setting in map-keys($grid-settings) {
+  $breakpoint: map-deep-get($grid-settings, $setting, 'breakpoint');
+  $row-gap: map-deep-get($grid-settings, $setting, 'row-gap');
+
+  @media (min-width: $breakpoint) {
+    // Grid column widths
+    @for $i from 1 through $grid-columns {
+      .grid-section {
+        padding: calc(#{$row-gap} * 2) 0 calc(#{$row-gap} * 2.5) 0;
+      }
+    }
+  }
+}

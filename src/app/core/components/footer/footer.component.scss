@@ -1,0 +1,59 @@
+@import 'utils/functions';
+@import 'utils/variables';
+
+.footer__main {
+  margin: rem(100px) 0 0 0;
+  padding: rem(15px) 0;
+  background: $color-background;
+  color: $color-on-background;
+}
+
+.footer__link-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer__link-list-item {
+  margin: 0 0 rem(8px) 0;
+}
+
+.footer__link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__social-label {
+  margin: 0 0 rem(12px) 0;
+}
+
+.footer__social-list {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer__social-list-item {
+  margin: 0 rem(16px) 0 0;
+}
+
+.footer__link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__secondary {
+  padding: rem(10px) 0;
+  background: $color-surface;
+  color: $color-on-surface;
+}

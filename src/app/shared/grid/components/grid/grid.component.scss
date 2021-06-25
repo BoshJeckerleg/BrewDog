@@ -1,0 +1,27 @@
+@import 'utils/variables';
+@import 'utils/functions';
+
+:host {
+  display: grid;
+  width: 100%;
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  @each $setting in map-keys($grid-settings) {
+    $breakpoint: map-deep-get($grid-settings, $setting, 'breakpoint');
+    $padding: map-deep-get($grid-settings, $setting, 'padding');
+    $column-gap: map-deep-get($grid-settings, $setting, 'column-gap');
+    $row-gap: map-deep-get($grid-settings, $setting, 'row-gap');
+
+    @media (min-width: $breakpoint) {
+      max-width: calc(#{$grid-width} + (#{$padding} * 2));
+      padding: 0 $padding;
+      grid-column-gap: $column-gap;
+      grid-row-gap: $row-gap;
+    }
+  }
+}
+
+:host(.grid--fluid) {
+  max-width: none;
+}

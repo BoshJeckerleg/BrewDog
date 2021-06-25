@@ -1,0 +1,138 @@
+@import 'utils/functions';
+@import 'utils/variables';
+@import './fonts';
+
+@mixin type-heading {
+  font-family: 'English Grotesque', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.3;
+}
+
+@mixin type-regular {
+  font-family: 'New Haas Grotesk Text', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.3;
+}
+
+@mixin type-banner() {
+  @include type-heading();
+  @include type-regular();
+  font-size: rem(40px);
+  line-height: 1;
+  letter-spacing: rem(1px);
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: rem(50px);
+  }
+}
+
+.type-banner {
+  @include type-banner();
+}
+
+@mixin type-primary-heading() {
+  @include type-heading();
+  font-size: rem(28px);
+  line-height: 1.5;
+  letter-spacing: rem(1.25px);
+
+  @media (min-width: $breakpoint-md) {
+    font-size: rem(34px);
+  }
+}
+
+.type-primary-heading {
+  @include type-primary-heading();
+}
+
+@mixin type-secondary-heading() {
+  @include type-heading();
+  font-size: rem(24px);
+  line-height: 1.5;
+  letter-spacing: rem(1.25px);
+
+  @media (min-width: $breakpoint-md) {
+    font-size: rem(28px);
+  }
+}
+
+.type-secondary-heading {
+  @include type-secondary-heading();
+}
+
+@mixin type-body() {
+  @include type-regular();
+  font-size: rem(16px);
+  line-height: 1.5;
+  letter-spacing: rem(1.25px);
+}
+
+.type-body {
+  @include type-body();
+}
+
+@mixin type-small() {
+  @include type-regular();
+  font-size: rem(12px);
+  line-height: 1.5;
+  letter-spacing: rem(1.25px);
+
+  @media (min-width: $breakpoint-md) {
+    font-size: rem(14px);
+  }
+}
+
+.type-small {
+  @include type-small();
+}
+
+@mixin type-tiny() {
+  @include type-regular();
+  font-size: rem(12px);
+  line-height: 1.5;
+  letter-spacing: rem(1.25px);
+}
+
+.type-tiny {
+  @include type-tiny();
+}
+
+@mixin type-button() {
+  @include type-regular();
+  font-size: rem(14px);
+  line-height: 1.5;
+  letter-spacing: rem(1.25px);
+  text-transform: uppercase;
+}
+
+.type-button {
+  @include type-button();
+}
+
+@mixin type-label() {
+  @include type-regular();
+  font-size: rem(16px);
+  line-height: 1.5;
+  letter-spacing: rem(1.25px);
+
+  @media (min-width: $breakpoint-md) {
+    font-size: rem(18px);
+  }
+}
+
+.type-label {
+  @include type-label();
+}
+
+@mixin type-emphasis() {
+  color: var(--secondary);
+}
+
+.type-emphasis {
+  @include type-emphasis();
+}

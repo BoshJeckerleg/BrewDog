@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'New Haas Grotesk Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('New Haas Grotesk Text'), local('New Haas Grotesk Text'),
+    url('/assets/fonts/NHaasGroteskTX.otf') format('otf');
+  unicode-range: U+000-5FF;
+}
+
+@font-face {
+  font-family: 'English Grotesque';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('English Grotesque'), local('English Grotesque'),
+    url('/assets/fonts/EnglishGrotesque.woff2') format('woff2');
+  unicode-range: U+000-5FF;
+}

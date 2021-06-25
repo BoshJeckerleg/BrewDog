@@ -1,0 +1,33 @@
+<div class="page-not-found">
+  <app-grid>
+    <app-grid-row>
+      <app-grid-column [md]="6">
+        <div class="page-not-found__banner-container">
+          <picture>
+            <source media="(min-width: 769px)" srcset="https://www.brewdog.com/media/wysiwyg/404-page-img.JPG" />
+            <img
+              class="page-not-found__banner"
+              src="https://www.brewdog.com/media/wysiwyg/404-page-img-mob.JPG"
+              alt="brewdog"
+            />
+          </picture>
+          <h1 class="page-not-found__heading">404</h1>
+        </div>
+      </app-grid-column>
+
+      <app-grid-column [md]="6">
+        <div class="page-not-found__content">
+          <h2 class="page-not-found__subheading type-banner">Oops something went wrong!!</h2>
+          <p class="page-not-found__body">
+            This page cannot be found. Either it has been removed, had it's name changed or is temporarily unavailable.
+          </p>
+          <p class="page-not-found__body">
+            Don’t worry, you can still find an epic selection of beer and more right here.
+          </p>
+
+          <app-button-link>Back to our homepage</app-button-link>
+        </div>
+      </app-grid-column>
+    </app-grid-row>
+  </app-grid>
+</div>

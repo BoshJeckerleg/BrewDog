@@ -1,0 +1,52 @@
+@import './functions';
+
+$breakpoint-xs: em(0px);
+$breakpoint-sm: em(576px);
+$breakpoint-md: em(768px);
+$breakpoint-lg: em(992px);
+$breakpoint-xl: em(1200px);
+$breakpoint-main: $breakpoint-md;
+
+$grid-width: rem(1200px);
+$grid-columns: 12;
+$grid-settings: (
+  xs: (
+    breakpoint: $breakpoint-xs,
+    padding: rem(15px),
+    column-gap: rem(15px),
+    row-gap: rem(30px)
+  ),
+  sm: (
+    breakpoint: $breakpoint-sm,
+    padding: rem(20px),
+    column-gap: rem(20px),
+    row-gap: rem(30px)
+  ),
+  md: (
+    breakpoint: $breakpoint-md,
+    padding: rem(30px),
+    column-gap: rem(30px),
+    row-gap: rem(30px)
+  ),
+  lg: (
+    breakpoint: $breakpoint-lg,
+    padding: rem(40px),
+    column-gap: rem(30px),
+    row-gap: rem(30px)
+  ),
+  xl: (
+    breakpoint: $breakpoint-xl,
+    padding: rem(40px),
+    column-gap: rem(30px),
+    row-gap: rem(30px)
+  )
+);
+
+$color-background: #ffffff;
+$color-on-background: #000000;
+$color-surface: #ececec;
+$color-on-surface: #000000;
+$color-primary: #00afdb;
+$color-on-primary: #000000;
+$color-secondary: #000000;
+$color-on-secondary: #ffffff;

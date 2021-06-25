@@ -1,0 +1,20 @@
+@import 'utils/variables';
+@import 'utils/functions';
+
+:host {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+}
+
+@each $setting in map-keys($grid-settings) {
+  $breakpoint: map-deep-get($grid-settings, $setting, 'breakpoint');
+  $column-gap: map-deep-get($grid-settings, $setting, 'column-gap');
+  $row-gap: map-deep-get($grid-settings, $setting, 'row-gap');
+
+  @media (min-width: $breakpoint) {
+    :host {
+      grid-column-gap: $column-gap;
+      grid-row-gap: $row-gap;
+    }
+  }
+}
