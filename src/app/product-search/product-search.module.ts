@@ -1,7 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SharedButtonModule, SharedGridModule, SharedLayoutModule, SharedMediaModule } from '@brewdog/shared';
-import { SharedFormsModule } from '@brewdog/shared/forms/components/forms.module';
+import {
+  SharedAnimationModule,
+  SharedButtonModule,
+  SharedFormsModule,
+  SharedGridModule,
+  SharedLayoutModule,
+  SharedMediaModule
+} from '@brewdog/shared';
 import { ProductSearchFiltersComponent } from './components/product-search-filters/product-search-filters.component';
 import { ProductSearchResultComponent } from './components/product-search-result/product-search-result.component';
 import { ProductSearchResultsComponent } from './components/product-search-results/product-search-results.component';
@@ -21,11 +27,12 @@ import { ProductSearchStoreModule } from './store/product-search.store.module';
     CommonModule,
     ProductSearchRoutingModule,
     ProductSearchStoreModule,
-    SharedGridModule,
+    SharedAnimationModule,
+    SharedButtonModule,
     SharedFormsModule,
-    SharedMediaModule,
+    SharedGridModule,
     SharedLayoutModule,
-    SharedButtonModule
+    SharedMediaModule
   ],
   providers: [ProductSearchFormBuilder]
 })

@@ -1,5 +1,15 @@
-<ul class="product-search-results__list">
-  <li *ngFor="let product of products$ | async; trackBy: trackProduct" class="product-search-results__list-item">
-    <app-product-search-result [product]="product"></app-product-search-result>
-  </li>
-</ul>
+<div class="product-search-results">
+  <ul class="product-search-results__list">
+    <li
+      *ngFor="let product of products$ | async; trackBy: trackProduct"
+      appFadeIn
+      class="product-search-results__list-item"
+    >
+      <app-product-search-result [product]="product"></app-product-search-result>
+    </li>
+  </ul>
+
+  <div *ngIf="searching$ | async" @animationFadeOut class="product-search-results__loader-overlay">
+    <div class="product-search-results__loader"></div>
+  </div>
+</div>

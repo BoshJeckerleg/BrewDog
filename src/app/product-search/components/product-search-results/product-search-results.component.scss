@@ -1,6 +1,11 @@
 @import 'utils/functions';
 @import 'utils/variables';
 
+.product-search-results {
+  position: relative;
+  min-height: rem(500px);
+}
+
 .product-search-results__list {
   padding: 0;
   margin: 0;
@@ -8,5 +13,36 @@
 }
 
 .product-search-results__list-item {
-  margin: 0 0 rem(20px) 0;
+  margin: 0 0 rem(32px) 0;
+}
+
+.product-search-results__loader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: 100;
+}
+
+.product-search-results__loader {
+  position: sticky;
+  top: rem(100px);
+  width: rem(100px);
+  height: rem(100px);
+  margin: rem(200px) auto;
+  border-radius: 50%;
+  border: solid rem(3px) transparent;
+  border-left: solid rem(3px) $color-primary;
+  animation: rotate 800ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

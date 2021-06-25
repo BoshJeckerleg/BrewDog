@@ -8,3 +8,8 @@ export const selectProducts = createSelector(
   selectProductSearchState,
   (state: ProductSearchState): Product[] => state.products
 );
+
+export const selectProductSearching = createSelector(
+  selectProductSearchState,
+  (state: ProductSearchState): boolean => state.searching
+);
