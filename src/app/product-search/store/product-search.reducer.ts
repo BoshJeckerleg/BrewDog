@@ -1,5 +1,6 @@
 import { ActionReducer, createReducer, on } from '@ngrx/store';
 import { ProductSearchParameters } from '../models/product-search-parameters.interface';
+import { ProductSearchSort } from '../models/product-search-sort.enum';
 import { Product } from '../models/product.interface';
 import * as Actions from './product-search.actions';
 
@@ -8,7 +9,7 @@ export const featureKey = 'brewdog.product-search';
 export class ProductSearchState {
   readonly products: Product[] = [];
   readonly searching: boolean = false;
-  readonly searchParameters: ProductSearchParameters = {};
+  readonly searchParameters: ProductSearchParameters = { sort: ProductSearchSort.Default };
 }
 
 export const reducer: ActionReducer<ProductSearchState> = createReducer(

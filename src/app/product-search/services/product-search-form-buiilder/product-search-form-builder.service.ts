@@ -8,7 +8,8 @@ export class ProductSearchFormBuilder {
 
   public buildProductSearchForm(searchParameters: ProductSearchParameters): FormGroup {
     return this._formBuilder.group({
-      productName: new FormControl(searchParameters.productName)
+      productName: new FormControl(searchParameters.productName),
+      sort: new FormControl(searchParameters.sort)
     });
   }
 }

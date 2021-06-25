@@ -4,6 +4,7 @@ import { ProductSearchParameters } from '@brewdog/product-search/models/product-
 import { Product } from '@brewdog/product-search/models/product.interface';
 import { httpParametersFromObject } from '@brewdog/shared';
 import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
