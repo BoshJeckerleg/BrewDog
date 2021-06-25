@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as fromProductSearch from '../../store';
 
 @Component({
   templateUrl: './product-search.component.html',
@@ -6,7 +8,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductSearchComponent implements OnInit {
-  constructor() {}
+  constructor(private _store: Store<fromProductSearch.ProductSearchState>) {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {
+    this._store.dispatch(fromProductSearch.productSearch());
+  }
 }

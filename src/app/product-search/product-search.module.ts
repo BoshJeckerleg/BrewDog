@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SharedGridModule } from '@brewdog/shared';
 import { ProductSearchFiltersComponent } from './components/product-search-filters/product-search-filters.component';
 import { ProductSearchResultComponent } from './components/product-search-result/product-search-result.component';
 import { ProductSearchComponent } from './pages/product-search/product-search.component';
@@ -8,6 +9,6 @@ import { ProductSearchStoreModule } from './store/product-search.store.module';
 
 @NgModule({
   declarations: [ProductSearchComponent, ProductSearchResultComponent, ProductSearchFiltersComponent],
-  imports: [CommonModule, ProductSearchRoutingModule, ProductSearchStoreModule]
+  imports: [CommonModule, ProductSearchRoutingModule, ProductSearchStoreModule, SharedGridModule]
 })
 export class ProductSearchModule {}

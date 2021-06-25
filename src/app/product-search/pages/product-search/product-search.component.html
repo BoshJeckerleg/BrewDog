@@ -1,1 +1,16 @@
-<p>product-search works!</p>
+<app-grid-section>
+  <app-grid>
+    <app-grid-row>
+      <app-grid-column>
+        <h1 class="type-primary-heading">Product Search</h1>
+      </app-grid-column>
+    </app-grid-row>
+    <app-grid-row>
+      <app-grid-column>SearchBar</app-grid-column>
+    </app-grid-row>
+    <app-grid-row>
+      <app-grid-column [md]="9">Results</app-grid-column>
+      <app-grid-column [md]="3">Filters</app-grid-column>
+    </app-grid-row>
+  </app-grid>
+</app-grid-section>
