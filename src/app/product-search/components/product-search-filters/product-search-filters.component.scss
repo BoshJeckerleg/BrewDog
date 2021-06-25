@@ -1,0 +1,29 @@
+@import 'utils/variables';
+@import 'utils/functions';
+
+.product-search-filters {
+  display: flex;
+}
+
+.product-search-filters__search,
+.product-search-filters__sort {
+  display: block;
+  margin: 0 0 rem(16px) 0;
+}
+
+@media (min-width: $breakpoint-sm) {
+  .product-search-filters {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .product-search-filters__search {
+    flex: 1;
+    margin: 0 rem(20px) 0 0;
+  }
+
+  .product-search-filters__sort {
+    width: rem(300px);
+    margin: 0;
+  }
+}

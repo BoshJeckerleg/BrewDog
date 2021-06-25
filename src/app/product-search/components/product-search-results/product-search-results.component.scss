@@ -8,12 +8,12 @@
 
 .product-search-results__list {
   padding: 0;
-  margin: 0;
+  margin: rem(32px) 0;
   list-style: none;
 }
 
 .product-search-results__list-item {
-  margin: 0 0 rem(32px) 0;
+  margin: 0 0 rem(48px) 0;
 }
 
 .product-search-results__loader-overlay {

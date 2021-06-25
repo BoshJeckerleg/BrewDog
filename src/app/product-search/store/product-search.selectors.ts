@@ -7,10 +7,10 @@ import { featureKey, ProductSearchState } from './product-search.reducer';
 export const selectProductSearchState = createFeatureSelector<ProductSearchState>(featureKey);
 
 export const selectProducts = createSelector(selectProductSearchState, (state: ProductSearchState): Product[] => {
-  if (state.searchParameters.sort === ProductSearchSort.Default) {
-    return state.products;
-  } else if (state.searchParameters.sort === ProductSearchSort.AbvAscending) {
-    return state.products.sort((a: Product, b: Product) => {
+  const products: Product[] = state.products.slice();
+
+  if (state.searchParameters.sort === ProductSearchSort.AbvAscending) {
+    return products.sort((a: Product, b: Product) => {
       if (a.abv < b.abv) {
         return -1;
       } else if (a.abv > b.abv) {
@@ -19,7 +19,7 @@ export const selectProducts = createSelector(selectProductSearchState, (state: P
       return 0;
     });
   } else if (state.searchParameters.sort === ProductSearchSort.AbvDescending) {
-    return state.products.sort((a: Product, b: Product) => {
+    return products.sort((a: Product, b: Product) => {
       if (a.abv > b.abv) {
         return -1;
       } else if (a.abv < b.abv) {
@@ -28,6 +28,8 @@ export const selectProducts = createSelector(selectProductSearchState, (state: P
       return 0;
     });
   }
+
+  return products;
 });
 
 export const selectProductSearching = createSelector(

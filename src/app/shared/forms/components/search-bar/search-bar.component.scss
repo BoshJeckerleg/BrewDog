@@ -10,22 +10,23 @@
 }
 
 .search-bar__label {
-  @include visually-hidden();
+  display: block;
+  margin: 0 0 rem(5px) 0;
 }
 
 .search-bar__input {
   display: flex;
   align-items: center;
   width: 100%;
+  height: auto;
+  min-height: rem(44px);
+  padding: rem(13px) rem(15px) rem(10px) rem(45px);
   margin: 0;
-  padding: rem(14px) rem(15px) rem(12px) rem(50px);
-  border-radius: rem(4px);
+  background: $color-background;
   border: solid rem(2px) $color-border;
-  background-color: $color-background;
-  color: $color-on-background;
-  cursor: pointer;
+  border-radius: rem(4px);
   outline: none;
-  transition: border-color 300ms, background-color 300ms;
+  transition: border-color 200ms, background-color 200ms;
 }
 
 .search-bar__input:hover,
@@ -47,7 +48,7 @@
 .search-bar__icon {
   position: absolute;
   left: rem(15px);
-  height: rem(25px);
-  width: rem(25px);
+  height: rem(20px);
+  width: rem(20px);
   transition: color 300ms;
 }

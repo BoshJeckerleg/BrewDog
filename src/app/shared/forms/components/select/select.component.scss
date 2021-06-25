@@ -1,0 +1,114 @@
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
+
+.select {
+  position: relative;
+}
+
+.select__label {
+  display: block;
+  margin: 0 0 rem(5px) 0;
+}
+
+.select__input {
+  @include visually-hidden();
+}
+
+.select__trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: rem(44px);
+  padding: rem(12px) rem(15px) rem(10px) rem(15px);
+  margin: 0;
+  background: $color-background;
+  border: solid rem(2px) $color-border;
+  border-radius: rem(4px);
+  outline: none;
+  transition: border-color 200ms, background-color 200ms;
+
+  &::placeholder {
+    color: $color-border;
+  }
+}
+
+.select__trigger:hover,
+.select__trigger:focus {
+  border-color: $color-primary;
+  cursor: pointer;
+}
+
+.select--expanded .select__trigger,
+.select--expanded .select__trigger:focus {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-color: $color-primary;
+  border-bottom-color: transparent;
+}
+
+.select__dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: calc(100% - #{rem(2px)});
+  left: 0;
+  right: 0;
+  max-height: 0;
+  overflow: hidden;
+  z-index: 2;
+  transition: max-height 200ms;
+}
+
+.select__dropdown--expanded {
+  max-height: rem(300px);
+}
+
+.select__dropdown-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  background: $color-background;
+  border: solid rem(2px) $color-border;
+  border-top: solid 1px $color-border;
+  border-radius: 0 0 rem(4px) rem(4px);
+  transition: border-color 200ms;
+}
+
+.select__dropdown--expanded .select__dropdown-list {
+  @include vertical-scrollbar();
+  border-color: $color-primary;
+}
+
+.select__dropdown-list-item {
+  width: 100%;
+  border-bottom: solid 1px $color-border;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.select__option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: auto;
+  min-height: rem(32px);
+  padding: rem(8px) rem(10px);
+  margin: 0;
+  background: $color-background;
+  border: none;
+  outline: none;
+  transition: background-color 200ms, color 200ms;
+}
+
+.select__option:hover {
+  background-color: $color-border;
+  color: $color-primary;
+  cursor: pointer;
+}

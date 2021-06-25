@@ -1,8 +1,8 @@
-<div class="search-bar">
-  <label class="search-bar__label" [htmlFor]="id">
-    {{ label }}
-  </label>
+<label class="search-bar__label type-label" [htmlFor]="id">
+  {{ label }}
+</label>
 
+<div class="search-bar">
   <input
     (blur)="onBlur()"
     [attr.required]="required"

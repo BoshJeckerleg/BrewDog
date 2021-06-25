@@ -1,1 +1,52 @@
-<p>select works!</p>
+<label class="select__label type-label" [htmlFor]="id">
+  {{ label }}
+</label>
+
+<div class="select" [ngClass]="{ 'select--expanded': expanded$ | async }">
+  <select
+    [attr.required]="required"
+    [attr.tabindex]="(expanded$ | async) ? -1 : 0"
+    (focus)="expand()"
+    [formControl]="control"
+    [id]="id"
+    [name]="name"
+    class="select__input"
+  >
+    <option *ngFor="let option of options; trackBy: trackOption" [value]="option.value">{{ option.label }}</option>
+  </select>
+
+  <button
+    (click)="toggle()"
+    [attr.aria-label]="(expanded$ | async) ? 'Open select' : 'Close select'"
+    [attr.tabindex]="-1"
+    [disabled]="control.disabled || !options?.length"
+    class="select__trigger"
+    type="button"
+  >
+    <span class="select__trigger-label">
+      {{ triggerLabel$ | async }}
+    </span>
+  </button>
+
+  <div class="select__dropdown" [ngClass]="{ 'select__dropdown--expanded': (expanded$ | async) && !control.disabled }">
+    <ul class="select__dropdown-list">
+      <li *ngFor="let option of options; trackBy: trackOption" class="select__dropdown-list-item">
+        <button
+          (click)="handleSelection(option)"
+          [attr.tabindex]="(expanded$ | async) ? '' : -1"
+          [disabled]="control.disabled"
+          class="select__option"
+          type="button"
+        >
+          <ng-container
+            [ngTemplateOutlet]="optionTemplate || defaultOptionTemplate"
+            [ngTemplateOutletContext]="{ $implicit: option }"
+          ></ng-container>
+          <ng-template #defaultOptionTemplate let-option>
+            {{ option.label }}
+          </ng-template>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

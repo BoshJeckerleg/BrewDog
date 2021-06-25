@@ -1,8 +1,17 @@
 <form *ngIf="form" [formGroup]="form" class="product-search-filters">
   <app-search-bar
+    class="product-search-filters__search"
     [control]="form.get('productName')"
     [name]="'productName'"
     [label]="'Product name'"
     [placeholder]="'Search by product name'"
   ></app-search-bar>
+
+  <app-select
+    class="product-search-filters__sort"
+    [control]="form.get('sort')"
+    [name]="'sort'"
+    [label]="'Sort'"
+    [options]="sortSelectOptions"
+  ></app-select>
 </form>

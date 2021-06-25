@@ -116,17 +116,6 @@
   @include type-small();
 }
 
-@mixin type-tiny() {
-  @include type-regular();
-  font-size: rem(12px);
-  line-height: 1.25;
-  letter-spacing: normal;
-}
-
-.type-tiny {
-  @include type-tiny();
-}
-
 @mixin type-button() {
   @include type-regular();
   font-size: rem(16px);
@@ -140,13 +129,9 @@
 
 @mixin type-label() {
   @include type-regular();
-  font-size: rem(16px);
+  font-size: rem(14px);
   line-height: 1.25;
   letter-spacing: normal;
-
-  @media (min-width: $breakpoint-md) {
-    font-size: rem(18px);
-  }
 }
 
 .type-label {

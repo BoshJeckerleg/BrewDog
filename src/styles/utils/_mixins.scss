@@ -12,3 +12,19 @@
 .visually-hidden {
   @include visually-hidden();
 }
+
+@mixin vertical-scrollbar() {
+  overflow-y: auto;
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track {
+    width: rem(5px);
+    background: $color-background;
+    border-left: solid rem(1px) $color-primary;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: rem(5px);
+    background: $color-primary;
+  }
+}
