@@ -1,3 +1,13 @@
-<p>product-search-result works!</p>
+<div class="product-search-result" [ngClass]="{ 'product-search-result--stacked': stacked }">
+  <div class="product-search-result__image">
+    <app-image [src]="product.image_url" [aspectRatio]="'1:2'"></app-image>
+  </div>
 
-<app-image class="product-search-result__image" [src]="product.image_url" [aspectRatio]="'1:2'"> </app-image>
+  <div class="product-search-result__content">
+    <h4 class="product-search-result__heading type-secondary-heading">{{ product.name }}</h4>
+    <p class="product-search-result__abv type-large">ABV {{ product.abv }}%</p>
+    <p class="product-search-result__subheading type-tertiary-heading">{{ product.tagline }}</p>
+    <p class="product-search-result__description">{{ product.description }}</p>
+    <app-button-link>Shop now</app-button-link>
+  </div>
+</div>

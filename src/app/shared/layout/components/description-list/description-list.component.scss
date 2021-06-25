@@ -1,0 +1,19 @@
+@import 'utils/functions';
+
+.description-list__title {
+  margin: 0 0 rem(5px) 0;
+  text-decoration: underline;
+}
+
+.description-list {
+  margin: 0 0 rem(10px) 0;
+}
+
+.description-list::ng-deep app-description-list-item {
+  display: block;
+  margin: 0 0 rem(5px) 0;
+
+  &:last-of-type {
+    margin: 0;
+  }
+}

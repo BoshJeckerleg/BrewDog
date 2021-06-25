@@ -1,0 +1,12 @@
+@import 'utils/functions';
+@import 'utils/variables';
+
+.product-search-results__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.product-search-results__list-item {
+  margin: 0 0 rem(20px) 0;
+}

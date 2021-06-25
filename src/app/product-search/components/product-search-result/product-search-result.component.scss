@@ -1,6 +1,53 @@
 @import 'utils/variables';
 
+.product-search-result {
+  display: flex;
+  align-items: center;
+}
+
 .product-search-result__image {
-  display: block;
-  width: rem(200px);
+  width: 25%;
+  min-width: 25%;
+  margin: 0 rem(24px) 0 0;
+}
+
+.product-search-result__heading {
+  margin: 0 0 rem(16px) 0;
+}
+
+.product-search-result__abv {
+  display: inline-block;
+  margin: 0 0 rem(16px) 0;
+  padding: rem(4px) rem(16px);
+  border: solid 2px $color-primary;
+  border-radius: rem(20px);
+  background: $color-on-primary;
+  color: $color-primary;
+}
+
+.product-search-result__subheading {
+  margin: 0 0 rem(16px) 0;
+}
+
+.product-search-result__description {
+  max-width: rem(500px);
+  margin: 0 0 rem(16px) 0;
+}
+
+.product-search-result--stacked {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-search-result--stacked .product-search-result__image {
+  width: 50%;
+  max-width: rem(100px);
+  margin: 0 0 rem(24px) 0;
+}
+
+.product-search-result--stacked .product-search-result__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

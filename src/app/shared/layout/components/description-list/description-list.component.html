@@ -1,0 +1,4 @@
+<h4 *ngIf="title" class="description-list__title type-tertiary-heading type-bold">{{ title }}</h4>
+<dl class="description-list">
+  <ng-content [select]="'app-description-list-item'"></ng-content>
+</dl>

@@ -17,3 +17,12 @@
     url('/assets/fonts/EnglishGrotesque.woff2') format('woff2');
   unicode-range: U+000-5FF;
 }
+
+@font-face {
+  font-family: 'New Grotesk Square';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('New Grotesk Square'), local('New Grotesk Square'), url('/assets/fonts/NewGroteskSquare.otf') format('otf');
+  unicode-range: U+000-5FF;
+}

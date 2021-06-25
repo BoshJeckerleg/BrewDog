@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Product } from '@brewdog/product-search/models/product.interface';
 
 @Component({
@@ -7,10 +7,7 @@ import { Product } from '@brewdog/product-search/models/product.interface';
   styleUrls: ['./product-search-result.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductSearchResultComponent implements OnInit {
+export class ProductSearchResultComponent {
   @Input() public product: Product;
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  @Input() public stacked: boolean;
 }
