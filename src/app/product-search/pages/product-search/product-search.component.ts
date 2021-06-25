@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { ProductSearchFormBuilder } from '@brewdog/product-search/services/product-search-form-buiilder/product-search-form-builder.service';
 import { Store } from '@ngrx/store';
 import * as fromProductSearch from '../../store';
 
@@ -8,9 +10,19 @@ import * as fromProductSearch from '../../store';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductSearchComponent implements OnInit {
-  constructor(private _store: Store<fromProductSearch.ProductSearchState>) {}
+  public form: FormGroup;
+
+  constructor(
+    private _productSearchFormBuilder: ProductSearchFormBuilder,
+    private _store: Store<fromProductSearch.ProductSearchState>
+  ) {}
 
   public ngOnInit(): void {
     this._store.dispatch(fromProductSearch.productSearch());
+    this._buildProductSearchForm();
+  }
+
+  private _buildProductSearchForm(): void {
+    this.form = this._productSearchFormBuilder.buildProductSearchForm();
   }
 }

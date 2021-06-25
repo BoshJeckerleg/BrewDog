@@ -5,11 +5,20 @@
         <h1 class="type-primary-heading">Product Search</h1>
       </app-grid-column>
     </app-grid-row>
+
     <app-grid-row>
-      <app-grid-column>SearchBar</app-grid-column>
+      <app-grid-column>
+        <app-search-bar
+          [control]="form.get('searchTerm')"
+          [name]="'searchTerm'"
+          [label]="'Product search term'"
+          [placeholder]="'Search by product name'"
+        ></app-search-bar
+      ></app-grid-column>
     </app-grid-row>
+
     <app-grid-row>
-      <app-grid-column [md]="9">Results</app-grid-column>
+      <app-grid-column [md]="9"><app-product-search-results></app-product-search-results></app-grid-column>
       <app-grid-column [md]="3">Filters</app-grid-column>
     </app-grid-row>
   </app-grid>

@@ -1,0 +1,5 @@
+<ul class="product-search-results__list">
+  <li *ngFor="let product of products$ | async; trackBy: trackProduct" class="product-search-results__list-item">
+    <app-product-search-result [product]="product"></app-product-search-result>
+  </li>
+</ul>

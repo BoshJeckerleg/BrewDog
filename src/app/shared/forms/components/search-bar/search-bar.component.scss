@@ -1,0 +1,53 @@
+@import 'utils/functions';
+@import 'utils/variables';
+@import 'utils/mixins';
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 0 rem(16px) 0;
+}
+
+.search-bar__label {
+  @include visually-hidden();
+}
+
+.search-bar__input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: rem(14px) rem(15px) rem(12px) rem(50px);
+  border-radius: rem(4px);
+  border: solid rem(2px) $color-border;
+  background-color: $color-background;
+  color: $color-on-background;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 300ms, background-color 300ms;
+}
+
+.search-bar__input:hover,
+.search-bar__input:focus {
+  border-color: $color-primary;
+}
+
+.search-bar__input::-webkit-search-decoration,
+.search-bar__input::-webkit-search-cancel-button,
+.search-bar__input::-webkit-search-results-button,
+.search-bar__input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.search-bar__input::-ms-clear {
+  display: none;
+}
+
+.search-bar__icon {
+  position: absolute;
+  left: rem(15px);
+  height: rem(25px);
+  width: rem(25px);
+  transition: color 300ms;
+}

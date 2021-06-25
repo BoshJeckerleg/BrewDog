@@ -27,9 +27,26 @@
     display: flex;
     align-items: center;
 
+    &:first-of-type::after {
+      content: '|';
+      padding: 0 rem(15px);
+    }
+
+    &:last-of-type {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .subheader__link,
+  .subheader__link:last-of-type {
+    display: flex;
+    align-items: center;
+
     &::after {
       content: '|';
-      padding: 0 rem(20px);
+      padding: 0 rem(15px);
     }
 
     &:last-of-type:after {
