@@ -1,0 +1,9 @@
+<div
+  (handleElementIntersection)="handleIntersection()"
+  [ngClass]="{ 'image--loaded': loaded$ | async, 'image--fill': fill, 'image--portrait': portrait }"
+  [ngStyle]="{ 'padding-top': aspectRatioHeightPercentage }"
+  appElementIntersection
+  class="image"
+>
+  <img class="image__image" [alt]="alt" [src]="(loaded$ | async) ? src : transparentPixel" />
+</div>

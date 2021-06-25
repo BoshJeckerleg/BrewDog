@@ -1,3 +1,5 @@
-export * from './button/button.module';
-export * from './grid/grid.module';
+export * from './button';
+export * from './grid';
+export * from './media';
 export * from './shared.module';
+export * from './utils';
