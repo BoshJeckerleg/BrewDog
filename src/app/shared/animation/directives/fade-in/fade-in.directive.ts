@@ -63,7 +63,7 @@ export class FadeInDirective implements AfterViewInit, OnDestroy {
 
   private _listenToAnimationTrigger(): void {
     this._animate$
-      .pipe(first(), delay((Number(this.order) * this.duration) / 3), takeUntil(this._destroyed$))
+      .pipe(first(), delay(Number(this.order) * (this.duration * 0.66)), takeUntil(this._destroyed$))
       .subscribe(() => this._animationPlayer.play());
   }
 
