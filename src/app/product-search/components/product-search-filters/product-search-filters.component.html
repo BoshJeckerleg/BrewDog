@@ -1,1 +1,8 @@
-<p>product-search-filters works!</p>
+<form *ngIf="form" [formGroup]="form" class="product-search-filters">
+  <app-search-bar
+    [control]="form.get('productName')"
+    [name]="'productName'"
+    [label]="'Product name'"
+    [placeholder]="'Search by product name'"
+  ></app-search-bar>
+</form>

@@ -8,13 +8,8 @@
 
     <app-grid-row>
       <app-grid-column>
-        <app-search-bar
-          [control]="form.get('searchTerm')"
-          [name]="'searchTerm'"
-          [label]="'Product search term'"
-          [placeholder]="'Search by product name'"
-        ></app-search-bar
-      ></app-grid-column>
+        <app-product-search-filters></app-product-search-filters>
+      </app-grid-column>
     </app-grid-row>
 
     <app-grid-row>

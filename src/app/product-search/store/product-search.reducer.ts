@@ -1,4 +1,5 @@
 import { ActionReducer, createReducer, on } from '@ngrx/store';
+import { ProductSearchParameters } from '../models/product-search-parameters.interface';
 import { Product } from '../models/product.interface';
 import * as Actions from './product-search.actions';
 
@@ -7,6 +8,7 @@ export const featureKey = 'brewdog.product-search';
 export class ProductSearchState {
   readonly products: Product[] = [];
   readonly searching: boolean = false;
+  readonly searchParameters: ProductSearchParameters = {};
 }
 
 export const reducer: ActionReducer<ProductSearchState> = createReducer(
@@ -29,5 +31,14 @@ export const reducer: ActionReducer<ProductSearchState> = createReducer(
       ...state,
       searching: false
     };
-  })
+  }),
+  on(
+    Actions.updateProductSearchParameters,
+    (state: ProductSearchState, action: { searchParameters: ProductSearchParameters }): ProductSearchState => {
+      return {
+        ...state,
+        searchParameters: action.searchParameters
+      };
+    }
+  )
 );

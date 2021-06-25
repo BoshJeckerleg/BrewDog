@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ProductSearchParameters } from '@brewdog/product-search/models/product-search-parameters.interface';
 
 @Injectable()
 export class ProductSearchFormBuilder {
   constructor(private _formBuilder: FormBuilder) {}
 
-  public buildProductSearchForm(): FormGroup {
+  public buildProductSearchForm(searchParameters: ProductSearchParameters): FormGroup {
     return this._formBuilder.group({
-      searchTerm: new FormControl()
+      productName: new FormControl(searchParameters.productName)
     });
   }
 }
