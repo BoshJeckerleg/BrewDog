@@ -1,4 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { ProductSearchDisplay as ProductSearchDisplay } from '../models/product-search-display.enum';
 import { ProductSearchParameters } from '../models/product-search-parameters.interface';
 import { ProductSearchSort } from '../models/product-search-sort.enum';
 import { Product } from '../models/product.interface';
@@ -40,4 +41,9 @@ export const selectProductSearching = createSelector(
 export const selectProductSearchParameters = createSelector(
   selectProductSearchState,
   (state: ProductSearchState): ProductSearchParameters => state.searchParameters
+);
+
+export const selectProductSearchDisplay = createSelector(
+  selectProductSearchState,
+  (state: ProductSearchState): ProductSearchDisplay => state.display
 );

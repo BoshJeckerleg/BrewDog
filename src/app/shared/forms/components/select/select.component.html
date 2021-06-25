@@ -34,7 +34,7 @@
         <button
           (click)="handleSelection(option)"
           [attr.tabindex]="(expanded$ | async) ? '' : -1"
-          [disabled]="control.disabled"
+          [disabled]="control.disabled || option.value === control.value"
           class="select__option"
           type="button"
         >

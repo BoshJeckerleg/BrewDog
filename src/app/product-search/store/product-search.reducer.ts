@@ -1,4 +1,5 @@
 import { ActionReducer, createReducer, on } from '@ngrx/store';
+import { ProductSearchDisplay } from '../models/product-search-display.enum';
 import { ProductSearchParameters } from '../models/product-search-parameters.interface';
 import { ProductSearchSort } from '../models/product-search-sort.enum';
 import { Product } from '../models/product.interface';
@@ -10,6 +11,7 @@ export class ProductSearchState {
   readonly products: Product[] = [];
   readonly searching: boolean = false;
   readonly searchParameters: ProductSearchParameters = { sort: ProductSearchSort.Default };
+  readonly display: ProductSearchDisplay = ProductSearchDisplay.Grid;
 }
 
 export const reducer: ActionReducer<ProductSearchState> = createReducer(
@@ -38,7 +40,17 @@ export const reducer: ActionReducer<ProductSearchState> = createReducer(
     (state: ProductSearchState, action: { searchParameters: ProductSearchParameters }): ProductSearchState => {
       return {
         ...state,
-        searchParameters: action.searchParameters
+        searchParameters: action.searchParameters,
+        searching: true
+      };
+    }
+  ),
+  on(
+    Actions.updateProductSearchDisplay,
+    (state: ProductSearchState, action: { display: ProductSearchDisplay }): ProductSearchState => {
+      return {
+        ...state,
+        display: action.display
       };
     }
   )

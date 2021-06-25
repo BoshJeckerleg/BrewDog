@@ -21,7 +21,7 @@ export class ElementIntersectionUtilsService implements OnDestroy {
     if ('IntersectionObserver' in window) {
       this._intersectionObserver = new IntersectionObserver(this._onIntersectionChange, {
         rootMargin: '0%',
-        threshold: 0.5
+        threshold: 0.25
       });
     }
   }

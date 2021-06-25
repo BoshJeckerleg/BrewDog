@@ -2,7 +2,7 @@ import { animate, AnimationBuilder, AnimationPlayer, style } from '@angular/anim
 import { AfterViewInit, Directive, ElementRef, Input, OnDestroy } from '@angular/core';
 import { ElementIntersectionUtilsService } from '@brewdog/shared';
 import { ReplaySubject } from 'rxjs';
-import { delay, takeUntil } from 'rxjs/operators';
+import { delay, first, takeUntil } from 'rxjs/operators';
 
 @Directive({
   selector: '[appFadeIn]'
@@ -10,8 +10,10 @@ import { delay, takeUntil } from 'rxjs/operators';
 export class FadeInDirective implements AfterViewInit, OnDestroy {
   @Input('appFadeIn') public direction: 'up' | 'left' | 'right' | 'down' = 'up';
   @Input('appFadeInOrder') public order: number | string = 0;
+  @Input('appFadeInImmediate') public immediate: boolean;
   @Input('appFadeInDuration') public duration: number = 300;
 
+  private _animate$: ReplaySubject<void> = new ReplaySubject();
   private _animationPlayer: AnimationPlayer;
   private _destroyed$: ReplaySubject<void> = new ReplaySubject();
 
@@ -23,20 +25,19 @@ export class FadeInDirective implements AfterViewInit, OnDestroy {
 
   public ngAfterViewInit(): void {
     this._buildAnimation();
-    this._observeElement();
+    this._listenToAnimationTrigger();
+
+    if (this.immediate) {
+      this._animate$.next();
+    } else {
+      this._observeElementIntersection();
+    }
   }
 
   public ngOnDestroy(): void {
     this._destroyed$.next();
     this._destroyed$.complete();
     this._elementIntersectionUtilsService.unobserveElementIntersection(this._element);
-  }
-
-  private _observeElement(): void {
-    this._elementIntersectionUtilsService
-      .observeElementIntersection(this._element)
-      .pipe(delay(Number(this.order) * this.duration), takeUntil(this._destroyed$))
-      .subscribe(() => this._animationPlayer.play());
   }
 
   private _buildAnimation = (): void => {
@@ -52,6 +53,19 @@ export class FadeInDirective implements AfterViewInit, OnDestroy {
 
     this._animationPlayer.init();
   };
+
+  private _observeElementIntersection(): void {
+    this._elementIntersectionUtilsService
+      .observeElementIntersection(this._element)
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe(() => this._animate$.next());
+  }
+
+  private _listenToAnimationTrigger(): void {
+    this._animate$
+      .pipe(first(), delay((Number(this.order) * this.duration) / 3), takeUntil(this._destroyed$))
+      .subscribe(() => this._animationPlayer.play());
+  }
 
   private get _animationStartPosition(): string {
     const animationDistance: string = '64px';
