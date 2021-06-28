@@ -36,6 +36,7 @@
   </div>
 
   <ul
+    *ngIf="(products$ | async)?.length; else noProducts"
     [ngClass]="{
       'product-search-results__list--grid': (display$ | async) === display.Grid
     }"
@@ -55,6 +56,12 @@
     </li>
   </ul>
 
+  <ng-template #noProducts>
+    <div class="product-search-results__no-results">
+      <h2 class="product-search-results__no-results-title type-secondary-heading">No products found</h2>
+      <p class="product-search-results__no-results-message type-large">Try changing your filters and search again</p>
+    </div>
+  </ng-template>
   <div *ngIf="searching$ | async" @animationFadeOut class="product-search-results__loader-overlay">
     <div class="product-search-results__loader"></div>
   </div>

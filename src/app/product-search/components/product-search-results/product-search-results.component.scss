@@ -72,6 +72,15 @@
   animation: rotate 800ms infinite linear;
 }
 
+.product-search-results__no-results {
+  margin: rem(80px) auto;
+  text-align: center;
+}
+
+.product-search-results__no-results-title {
+  margin: rem(20px) 0;
+}
+
 @media (min-width: $breakpoint-md) {
   .product-search-results__list--grid {
     display: flex;

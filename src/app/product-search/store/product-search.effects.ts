@@ -19,7 +19,7 @@ export class ProductSearchEffects {
   public requestProductSearch: Observable<Action> = createEffect(() =>
     this._actions.pipe(
       ofType(fromProductSearch.updateProductSearchParameters),
-      debounceTime(500),
+      debounceTime(100),
       map(() => fromProductSearch.productSearch())
     )
   );
