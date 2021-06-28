@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FadeInDirective } from './directives/fade-in/fade-in.directive';
 
 @NgModule({
-  declarations: [FadeInDirective],
+  declarations: [],
   imports: [CommonModule],
-  exports: [FadeInDirective]
+  exports: []
 })
 export class SharedAnimationModule {}

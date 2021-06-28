@@ -44,9 +44,6 @@
   >
     <li
       *ngFor="let product of products$ | async; trackBy: trackProduct; let index = index"
-      [appFadeInImmediate]="true"
-      [appFadeInOrder]="index"
-      appFadeIn
       class="product-search-results__list-item"
     >
       <app-product-search-result
