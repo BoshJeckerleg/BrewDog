@@ -50,6 +50,7 @@ export class ProductSearchService implements OnDestroy {
             return 0;
           });
         }
+        return filteredProducts;
       })
     );
   }
