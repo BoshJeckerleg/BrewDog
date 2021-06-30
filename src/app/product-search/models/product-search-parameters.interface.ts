@@ -1,6 +1,6 @@
 import { ProductSearchSort } from './product-search-sort.enum';
 
 export interface ProductSearchParameters {
-  tagline?: string;
+  beerName?: string;
   sort: ProductSearchSort;
 }

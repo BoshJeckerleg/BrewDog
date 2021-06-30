@@ -20,7 +20,7 @@ export interface Product {
   name: string;
   ph: number;
   srm: number;
-  tagline: string;
+  beerName: string;
   target_fg: number;
   target_og: number;
   volume: ProductVolume;

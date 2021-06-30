@@ -1,10 +1,10 @@
 <form *ngIf="form" [formGroup]="form" class="product-search-filters">
   <app-search-bar
     class="product-search-filters__search"
-    [control]="form.get('tagline')"
-    [name]="'tagline'"
-    [label]="'Tag line'"
-    [placeholder]="'Search by product tag line'"
+    [control]="form.get('beerName')"
+    [name]="'beerName'"
+    [label]="'Beer name'"
+    [placeholder]="'Search by beer name'"
   ></app-search-bar>
 
   <app-select
